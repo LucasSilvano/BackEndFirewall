@@ -12,6 +12,10 @@ class TesteController
     {
         echo "Hello!";
     }
+    public function testWithParams()
+    {
+        echo "Hello With Params!";
+    }
 }
 
 ?>
