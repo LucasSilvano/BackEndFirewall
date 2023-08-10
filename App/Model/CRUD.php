@@ -115,13 +115,21 @@ class CRUD extends \App\Model\Connection {
     // Método para deletar um registro da tabela com base em uma condição WHERE
     public function delete(string $table, array $where): void {
         try {
-            $query = "DELETE FROM $table WHERE $where";
-            $stmt = $this->queryManager->executeQuery($query);
+            $conditions = [];
+            foreach ($where as $column => $value) {
+                $conditions[] = "$column = :$column"; // Monta as condições da cláusula WHERE
+            }
+            $whereClause = implode(' AND ', $conditions); // Combina as condições com 'AND'
+            
+            $query = "DELETE FROM $table WHERE $whereClause"; // Monta a consulta DELETE
+            $stmt = $this->queryManager->executeQuery($query, $where); // Executa a consulta com os parâmetros
             echo "Registro deletado com sucesso!";
         } catch (PDOException $e) {
-            echo "Erro ao deletar: " . $e->getMessage();
+            echo "Erro ao deletar: " . $e->getMessage(); // Em caso de erro, exibe a mensagem
         }
     }
+    
+    
 }
 
 ?>

@@ -2,19 +2,25 @@
 declare(strict_types=1);
 
 namespace App\Controllers;
+
 require __DIR__ . ('../../../vendor/autoload.php');
 
-namespace App\Controllers;
 
-class TesteController
+class TesteController extends Controller
 {
     public function testNoParams()
     {
-        echo "Hello!";
+        $this->view('firewall');
     }
     public function testWithParams($params)
     {
-        echo "Hello $params";
+        $data = [
+            'name' => $params[0],
+            'age' => $params[1]
+        ];
+
+    
+        $this->view('firewallsem', $data);
     }
 }
 
