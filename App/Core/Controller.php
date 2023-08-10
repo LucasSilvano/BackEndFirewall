@@ -24,7 +24,12 @@ class Controller{
         if(!method_exists($controller, $method)){
             throw new Exception("O método {$method} não existe no controller {$controllerNamespace}");
         }
-        $controller->$method();
+
+        $params =  new ControllerParams;
+        $params = $params->get($router);
+
+
+        $controller->$method($params);
 
     }
 }

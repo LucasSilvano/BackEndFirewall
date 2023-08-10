@@ -12,9 +12,9 @@ class TesteController
     {
         echo "Hello!";
     }
-    public function testWithParams()
+    public function testWithParams($params)
     {
-        echo "Hello With Params!";
+        echo "Hello $params";
     }
 }
 
