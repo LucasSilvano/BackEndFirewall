@@ -16,7 +16,6 @@ class Router {
             
             $controller = new Controller;
             $controller->execute($router);
-            // Imprime no console (var_dump) a rota encontrada ou nula
         } catch (\Throwable $th) {
             echo $th->getMessage();
         }

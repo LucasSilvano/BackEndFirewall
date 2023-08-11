@@ -40,7 +40,6 @@
                             <th>IP de Destino</th>
                             <th>Porta de Destino</th>
                             <th>Protocolo</th>
-                            <th>Estado da Conexão</th>
                             <th>Ação</th>
                         </tr>
                     </thead>
@@ -54,14 +53,10 @@
                                 <td><?= $rule['dest_ip'] ?></td>
                                 <td><?= $rule['dest_port'] ?></td>
                                 <td><?= $rule['protocol'] ?></td>
-                                <td><?= $rule['connection_state'] ?></td>
                                 <td><?= $rule['action'] ?></td>
                                 <td>
-                                    <a href="/firewall/editar/<?= $rule['id'] ?>" class="btn btn-sm btn-primary">Editar</a>
-                                    <br>
                                     <form method="post" action="/firewall/removeruler/<?= $rule['id'] ?>">
-                                        <input type="hidden" name="id" value="<?= $rule['id'] ?>"">
-                                        <!-- Outros campos do formulário -->
+                                        <input type="hidden" name="id" value="<?= $rule['id'] ?>">
                                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir esta regra?')">Excluir</button>
                                     </form>
 
@@ -75,6 +70,7 @@
         <!-- Modals for Add Rule -->
         <!-- Conteúdo do modal Filter -->
         <?php require __DIR__ . '/partials/Filter/FormFilterIpTable.php' ?>
+
 
         <!-- Include Bootstrap JS (Optional, if you need dropdowns, modals, etc.) -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

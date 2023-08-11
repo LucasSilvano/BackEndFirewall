@@ -32,13 +32,13 @@ class Routes {
         return [
             'get' => [
                 '/' => 'FirewallController@index',
-                '/hello/[a-z]+/age/[1-9]+' => 'TesteController@testWithParams'
+                '/firewall/edit/(\d+)' =>'FirewallController@editpage'
                 
             ],
             'post' => [
                 '/firewall/addruler' => 'FirewallController@addRuler',
                 '/firewall/removeruler/(\d+)' => 'FirewallController@removeRuler',
-                '/firewall/editruler' => '/firewall/addruler@editRuler'
+                '/firewall/editruler/(\d+)' => '/firewall/addruler@editRuler'
 
             ]
         ];

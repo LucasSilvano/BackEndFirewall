@@ -24,23 +24,10 @@ class UserManager {
     public function createData(string $table, array $userData): bool {
         return $this->crud->create($table, $userData);
     }
-
-    // Método para ler dados da tabela com possibilidade de filtro WHERE
-    public function readData(string $table, string $column, string $where = null): array|false {
-        return $this->crud->read($table, $column, $where);
-    }
-
     // Método para ler todos os dados da tabela com possibilidade de filtro WHERE
     public function readAllData(string $table, string $column, string $where = null): array|false {
         return $this->crud->readAll($table, $column, $where);
     }
-
-    // Método para atualizar dados na tabela com base em uma condição WHERE
-    public function updateData(string $table, array $data, string $where): bool {
-        // Chama o método update da classe CRUD para atualizar o usuário no banco de dados
-        return $this->crud->update($table, $data, $where);
-    }
-
     // Método para deletar dados da tabela com base em uma condição WHERE
     public function deleteData(string $table, array $where): void {
         $this->crud->delete($table, $where);

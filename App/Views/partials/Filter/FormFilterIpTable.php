@@ -11,8 +11,8 @@
             <label for="inputRuleType" class="form-label">Tipo de Regra</label>
             <select class="form-select" id="inputRuleType" name="rule_type" required>
               <option value="" disabled selected>Selecione o Tipo de Regra</option>
-              <option>Entrada</option>
-              <option>Saída</option>
+              <option>INPUT</option>
+              <option>OUTPUT</option>
             </select>
           </div>
           <div class="mb-3">
@@ -25,7 +25,10 @@
           </div>
           <div class="mb-3">
             <label for="inputDestIP" class="form-label">IP de Destino</label>
-            <input type="text" class="form-control" id="inputDestIP" name="dest_ip">
+            <select class="form-select" id="inputDestIP" name="dest_ip">
+              <option value="" disabled selected>IP de Destino</option>
+              <option>100.64.145.183</option>
+            </select>
           </div>
           <div class="mb-3">
             <label for="inputDestPort" class="form-label">Porta de Destino</label>
@@ -40,20 +43,11 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="inputState" class="form-label">Estado</label>
-            <select class="form-select" id="inputState" name="state">
-              <option value="" disabled selected>Estado</option>
-              <option>Nova</option>
-              <option>Estabelecida</option>
-              <option>Nova e Estabelecida</option>
-            </select>
-          </div>
-          <div class="mb-3">
             <label for="inputAction" class="form-label">Ação</label>
             <select class="form-select" id="inputAction" name="action" required>
               <option value="" disabled selected>Selecione a Ação</option>
-              <option>Aceitar</option>
-              <option>Bloquear</option>
+              <option>ACCEPT</option>
+              <option>DROP</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary">Adicionar</button>
