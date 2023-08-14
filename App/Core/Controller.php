@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Core;
-
+require __DIR__ . ('../../../vendor/autoload.php');
 use Exception;
 
 // Declaração da classe Controller

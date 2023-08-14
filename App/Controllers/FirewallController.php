@@ -2,12 +2,12 @@
 declare(strict_types=1);
 
 namespace App\Controllers;
+require __DIR__ . ('../../../vendor/autoload.php');
 
 use App\Model\Logger;
 use App\Utils\IpSanitizerValidator;
 
 // Carrega automaticamente as classes do Composer (autoload)
-require __DIR__ . ('../../../vendor/autoload.php');
 
 // Declaração da classe FirewallController, que estende a classe Controller
 class FirewallController extends Controller

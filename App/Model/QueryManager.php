@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 namespace App\Model;
-
+require __DIR__ . ('../../../vendor/autoload.php');
 // Configurações para exibir erros
 ini_set('display_errors', 'on');
 error_reporting(E_ALL);

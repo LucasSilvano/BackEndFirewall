@@ -1,6 +1,6 @@
 <?php
 namespace App\Core;
-
+require __DIR__ . ('../../../vendor/autoload.php');
 use App\Helpers\URI;
 use App\Helpers\RequesType;
 use App\Routes\Routes;
